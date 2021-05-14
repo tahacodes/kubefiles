@@ -1,12 +1,11 @@
 kubectl create -f kube-logging.yaml
 kubectl create -f elasticsearch_svc.yaml
-kubectl create -f elasticsearch_statefulset.yaml
-kubectl create -f kibana.yaml
 
+kubectl get services --namespace=kube-logging
+
+kubectl create -f kibana.yaml
 kubectl rollout status deployment/kibana --namespace=kube-logging
+
 kubectl get pods --namespace=kube-logging
 
 kubectl create -f fluentd.yaml
-
-# for testing
-kubectl create -f counter.yaml
