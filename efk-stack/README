@@ -1,4 +1,5 @@
 kubectl create -f kube-logging.yaml
+kubectl create -f local-storage.yaml
 kubectl create -f elasticsearch_svc.yaml
 kubectl create -f elasticsearch_statefulset.yaml
 
