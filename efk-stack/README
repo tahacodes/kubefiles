@@ -1,0 +1,15 @@
+k create -f kube-logging.yaml
+k create -f elasticsearch_svc.yaml
+
+k get services --namespace=kube-logging
+
+k create -f elasticsearch_statefulset.yaml
+k rollout status sts/es-cluster --namespace=kube-logging
+
+k create -f kibana.yaml
+k rollout status deployment/kibana --namespace=kube-logging
+
+k get pods --namespace=kube-logging
+
+k create -f fluentd.yaml
+k get ds --namespace=kube-logging
