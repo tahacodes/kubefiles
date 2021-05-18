@@ -8,7 +8,6 @@ metadata:
 spec:
   selector:
     app: elasticsearch
-  clusterIP: None
   ports:
     - port: 9200
       name: rest
