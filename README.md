@@ -1,1 +1,1 @@
-just some simple yaml files.
+simple kubernetes manifests

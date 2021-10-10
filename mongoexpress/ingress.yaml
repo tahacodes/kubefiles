@@ -1,19 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: dashboard-ingress
-  namespace: kubernetes-dashboard
+  name: mongoexpress-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: rockandcode.ir
+    - host: mongo.rockandcode.ir
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: kubernetes-dashboard
+                name: mongoexpress-service
                 port:
-                  number: 80
+                  number: 8081
